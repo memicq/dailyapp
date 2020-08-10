@@ -1,0 +1,14 @@
+# Serve index page from public directory
+GET     /                           controllers.FrontendController.index()
+
+GET     /users                      controllers.UserController.index()
+GET     /users/:id                  controllers.UserController.TODO
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+#GET     /api/summary                controllers.HomeController.appSummary
+
+# Serve static assets under public directory
+GET /*file controllers.FrontendController.assetOrDefault(file)
+
+# Map static resources from the /public folder to the /assets URL path
+# GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
