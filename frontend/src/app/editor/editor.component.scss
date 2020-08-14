@@ -1,0 +1,28 @@
+.header-wrapper {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+}
+
+.editor-wrapper {
+  height: calc(100% - 58px);
+  width: 100%;
+
+  display: flex;
+
+  .input-editor-wrapper {
+    width: 50%;
+    height: 100%;
+  }
+
+  .preview-wrapper {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.footer-wrapper {
+  height: 18px;
+  width: 100%;
+  line-height: 18px;
+}

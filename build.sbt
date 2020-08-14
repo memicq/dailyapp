@@ -7,15 +7,19 @@ lazy val `dailyapp` = (project in file(".")).enablePlugins(PlayScala)
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
       
 resolvers += "Akka Snapshot Repository" at "https://repo.akka.io/snapshots/"
-      
-scalaVersion := "2.12.2"
 
-libraryDependencies ++= Seq( jdbc , ehcache , ws , specs2 % Test , guice )
+// @see(https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html)
+scalaVersion := "2.13.3"
+
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-slick" % "3.0.2",
-  "com.typesafe.slick" %% "slick-codegen" % "3.2.1",
-  "mysql" % "mysql-connector-java" % "5.1.42"
+  ehcache,
+  ws,
+  guice,
+  "com.typesafe.play"       %% "play-slick"             % "5.0.0",
+  "com.typesafe.play"       %% "play-slick-evolutions"  % "5.0.0",
+  "mysql"                    % "mysql-connector-java"   % "8.0.21",
+  "org.scalatestplus.play"  %% "scalatestplus-play"     % "5.0.0" % Test
 )
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+// unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
 

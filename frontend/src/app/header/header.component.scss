@@ -1,0 +1,62 @@
+// 変数
+$basic-icon-size: 15px;
+$big-icon-size: 25px;
+$file-font-size: 18px;
+
+$basic-bg-color: #e1e1e1;
+$basic-color: #838383;
+$em-color: #FFFFFF;
+
+#header {
+  width: 100%;
+  height: 100%;
+
+  background-color: $basic-bg-color;
+  color: $basic-color;
+
+  font-size: $basic-icon-size;
+
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+// hline
+.hline {
+  border-left: 1px solid $basic-color;
+  height: 30px;
+  margin: 0 2px;
+}
+
+
+// buttons
+#header ul li {
+  button:focus {
+    outline: none;
+  }
+
+  button:hover {
+    color: $em-color;
+  }
+}
+
+// icons
+.icon {
+  padding: 0 10px;
+}
+
+.big-icon {
+  font-size: $big-icon-size;
+}
+.text {
+  padding: 0 15px;
+
+  font-size: $file-font-size;
+}
